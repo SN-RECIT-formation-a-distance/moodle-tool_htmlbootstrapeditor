@@ -1,0 +1,27 @@
+{
+  "name": "recit_editor",
+  "version": "1.18.1-stable",
+  "description": "HTML Bootstrap Editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/index.js --out-dir ./build --public-url ./",
+    "build": "parcel build ./src/index.js --out-dir ./build --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@recit/html-bootstrap-editor": "git+https://github.com/SN-RECIT-formation-a-distance/html-bootstrap-editor.git",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "parcel-bundler": "1.12.5",
+    "sass": "1.34.1"
+  }
+}
