@@ -6,3 +6,4 @@ node_modules
 
 atto_reciteditor.zip
 *.zip
+src/react/package-lock.json

@@ -1,6 +1,6 @@
 {
-  "name": "recit_editor",
-  "version": "1.18.1-stable",
+  "name": "html_bootstrap_editor",
+  "version": "v0.0.0",
   "description": "HTML Bootstrap Editor",
   "main": "index.js",
   "scripts": {

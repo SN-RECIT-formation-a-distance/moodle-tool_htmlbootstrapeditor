@@ -27,3 +27,6 @@ To use inline CSS or an external CSS file with the editor, you will need to add 
 ``<style title="example" href="path/to/external/css/file">``
 
 This will tell the editor to load the specified CSS file (in this case, "example") when it is rendering the content of the editor canvas.
+
+## Custom components
+The files styles.css and content.js are a copy from the library html-bootstrap-editor.
