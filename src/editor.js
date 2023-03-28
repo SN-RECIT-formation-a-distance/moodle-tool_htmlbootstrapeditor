@@ -84,10 +84,6 @@ M.recit.htmlbootstrapeditor.IWrapper.getThemeCssRules = function(returnAllRules)
     return cssRulesBuffer;
 }
 
-M.recit.htmlbootstrapeditor.IWrapper.getThemeUrl = function(){
-    return `${M.cfg.wwwroot}/theme/styles.php/${M.cfg.theme}/${M.cfg.themerev}_${M.recit.htmlbootstrapeditor.settings.currentthemesubrev}/all`;
-}
-
 M.recit.htmlbootstrapeditor.IWrapper.saveTemplate = function(data){
     return M.recit.htmlbootstrapeditor.queryMoodle('htmlbootstrapeditor_save_template', data);
 }
