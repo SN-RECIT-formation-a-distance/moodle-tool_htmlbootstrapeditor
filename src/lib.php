@@ -25,11 +25,15 @@
 defined('MOODLE_INTERNAL') || die();
 
 function tool_htmlbootstrapeditor_inject_js() {
-    global $PAGE, $CFG;
+    global $PAGE;
 
     $PAGE->requires->js('/admin/tool/htmlbootstrapeditor/content.js');
     $PAGE->requires->js('/admin/tool/htmlbootstrapeditor/editor.js');
-   
+}
+
+function tool_htmlbootstrapeditor_init_settings() {
+    global $PAGE, $CFG;
+
     $settings = array(
         'currentthemesubrev' => theme_get_sub_revision_for_theme($CFG->theme),
         'showcase_url' => get_config('tool_htmlbootstrapeditor', 'enableshowcase') == 1 ? get_config('tool_htmlbootstrapeditor', 'showcase_url') : '',
@@ -40,6 +44,7 @@ function tool_htmlbootstrapeditor_inject_js() {
 
     $PAGE->requires->js_init_call('M.recit.htmlbootstrapeditor.init_settings', array($settings));
 }
+
 /**
  * Initialise the js strings required for this module.
  */

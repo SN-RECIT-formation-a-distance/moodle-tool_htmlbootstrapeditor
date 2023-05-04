@@ -64,7 +64,7 @@ if ($ADMIN->fulltree) {
     $name = 'tool_htmlbootstrapeditor/iconclass';
     $title = get_string('iconclass', 'tool_htmlbootstrapeditor');
     $description = get_string('iconclassdesc', 'tool_htmlbootstrapeditor');
-    $default = 'Fontawesome 4.7=.fa-,Fontawesome 5=.fas-';
+    $default = 'Fontawesome 4.7=.fa-,Fontawesome 5=.fas-,Fontelleo=.icon-,RÉCITFAD=.recitfad-';
     $setting = new \tool_htmlbootstrapeditor\admin_setting_configtext_iconclass($name, $title, $description, $default);
     $settings->add($setting);
 
