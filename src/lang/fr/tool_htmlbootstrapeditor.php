@@ -15,7 +15,7 @@ $string['configtitle'] = 'Éditeur HTML Bootstrap paramètres';
 $string['enableshowcase'] = 'Afficher la vitrine';
 $string['enableshowcasedesc'] = 'Affiche une page où vous pouvez mettre des gabarits. Requiert un serveur PHP.';
 $string['showcase_url'] = 'Vitrine URL';
-$string['showcase_urldesc'] = 'URL où le serveur de la vitrine est';
+$string['showcase_urldesc'] = 'URL du serveur de la vitrine';
 $string['generalsettings'] = 'General';
 $string['iconclass'] = 'Icônes à charger dans l\'éditeur';
 $string['iconclassdesc'] = 'Les classes nommées ci-dessus rendent disponibles les catégories d\'icônes pour les utilisateurs. Les classes Fontello et RECITFAD sont utilisées à l\'intérieur du <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Thème RÉCIT v2</a>.';
