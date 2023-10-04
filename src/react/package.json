@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@recit/html-bootstrap-editor": "git+https://github.com/SN-RECIT-formation-a-distance/html-bootstrap-editor.git",
+    "@recit/html-bootstrap-editor": "github:SN-RECIT-formation-a-distance/html-bootstrap-editor",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
