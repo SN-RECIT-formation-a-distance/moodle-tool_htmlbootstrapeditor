@@ -16,7 +16,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2023032803;
+$plugin->version   = 2023101900;
 $plugin->requires  = 2020061500.00; // Moodle 3.9.0
 $plugin->component = 'tool_htmlbootstrapeditor';
 $plugin->release = 'v1.0.6-stable';
