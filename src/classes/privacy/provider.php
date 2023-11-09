@@ -48,7 +48,7 @@ class provider implements
      */
     public static function get_metadata(collection $collection) : collection {
         $collection->add_database_table(
-            'tool_htmlbootstrapeditor_templates',
+            'htmlbseditor_templates',
             [
                 'name' => 'privacy:metadata:tool_htmlbootstrapeditor_templates:name',
                 'type' => 'privacy:metadata:tool_htmlbootstrapeditor_templates:type',
@@ -93,7 +93,7 @@ class provider implements
         }
 
         $sql = "SELECT userid
-                  FROM {tool_htmlbootstrapeditor_templates}
+                  FROM {htmlbseditor_templates}
                  WHERE userid = ?";
         $params = [$context->instanceid];
 
@@ -122,7 +122,7 @@ class provider implements
         $userid = $context->instanceid;
 
         $sql = "SELECT *
-                  FROM {tool_htmlbootstrapeditor_templates}
+                  FROM {htmlbseditor_templates}
                  WHERE userid = :userid";
 
         $params = [
@@ -155,7 +155,7 @@ class provider implements
         $userid = $context->instanceid;
 
         // Delete the records created for the userid.
-        $DB->delete_records('tool_htmlbootstrapeditor_templates', ['userid' => $userid]);
+        $DB->delete_records('htmlbseditor_templates', ['userid' => $userid]);
     }
 
     /**
@@ -169,7 +169,7 @@ class provider implements
         $context = $userlist->get_context();
 
         if ($context instanceof \context_user) {
-            $DB->delete_records('tool_htmlbootstrapeditor_templates', ['userid' => $context->instanceid]);
+            $DB->delete_records('htmlbseditor_templates', ['userid' => $context->instanceid]);
         }
     }
 
@@ -194,7 +194,7 @@ class provider implements
         }
         $userid = $context->instanceid;
 
-        $DB->delete_records('tool_htmlbootstrapeditor_templates', ['userid' => $userid]);
+        $DB->delete_records('htmlbseditor_templates', ['userid' => $userid]);
     }
 
 }
