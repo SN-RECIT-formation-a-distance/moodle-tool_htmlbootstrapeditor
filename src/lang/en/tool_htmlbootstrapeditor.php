@@ -257,4 +257,5 @@ $string['horizontaltablet'] = "Horizontal Tablet";
 $string['hdscreen'] = "HD Screen";
 $string['fhdscreen'] = "FHD Screen";
 $string['youtubeparamrel'] = "Values: 0 or 1. The default value is 1. This parameter determines whether the player should display similar videos at the end of video playback.";
-?>
+$string['dimension'] = "Dimension";
+$string['fullheight'] = "Full Height";

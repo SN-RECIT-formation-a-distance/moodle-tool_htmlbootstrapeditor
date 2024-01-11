@@ -32,7 +32,7 @@ function xmldb_tool_htmlbootstrapeditor_install() {
 
         foreach ($rst as $obj){
             unset($obj->id);
-            $DB->insert_record('htmlbseditor_templates', $obj);
+            $DB->insert_record('tool_htmlbootstrapeditor_tpl', $obj);
         }
     }
 }

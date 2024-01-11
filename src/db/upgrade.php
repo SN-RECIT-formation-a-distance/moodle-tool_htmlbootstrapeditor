@@ -14,11 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-defined('MOODLE_INTERNAL') || die();
+/**
+ * @package   tool_htmlbootstrapeditor
+ * @copyright 2019 RÉCIT 
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-$plugin->version   = 2023101901;
-$plugin->requires  = 2020061500.00; // Moodle 3.9.0
-$plugin->component = 'tool_htmlbootstrapeditor';
-$plugin->release = 'v1.0.9-stable';
-$plugin->supported = [39, 401];      //  Moodle 3.9.x, 3.10.x and 3.11.x are supported.
-$plugin->maturity = MATURITY_STABLE; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
+defined('MOODLE_INTERNAL') || die;
+
+function xmldb_tool_htmlbootstrapeditor_upgrade($oldversion) {
+    global $DB;
+    $dbman = $DB->get_manager();
+
+    $newversion = 2023101901;
+    if ($oldversion < $newversion) {
+        $table = new xmldb_table('htmlbseditor_templates');
+        $dbman->rename_table($table, 'tool_htmlbootstrapeditor_tpl');
+
+        upgrade_plugin_savepoint(true, $newversion, 'tool', 'htmlbootstrapeditor');
+    }
+
+    return true;
+}

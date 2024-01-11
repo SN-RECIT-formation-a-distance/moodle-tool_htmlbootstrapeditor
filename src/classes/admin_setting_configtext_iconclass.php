@@ -37,4 +37,3 @@ class admin_setting_configtext_iconclass extends \admin_setting_configtext {
         return true;
     }
 }
-?>

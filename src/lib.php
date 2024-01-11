@@ -280,7 +280,7 @@ function tool_htmlbootstrapeditor_strings_for_js() {
                                             'verticaltablet',
                                             'horizontaltablet',
                                             'hdscreen',
-                                            'fhdscreen'
+                                            'fhdscreen', 'dimension', 'fullheight'
                                         ),
                                     'tool_htmlbootstrapeditor');
 }

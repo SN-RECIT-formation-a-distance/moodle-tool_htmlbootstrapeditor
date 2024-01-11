@@ -53,7 +53,13 @@ class tool_htmlbootstrapeditor_external extends external_api {
     public static function get_template_list($type = null) {
         global $DB, $USER;
 
-        $rst = $DB->get_records('htmlbseditor_templates', array('userid' => $USER->id), 'name');
+        //$params = self::validate_parameters(
+        //    self::save_template_parameters(), array('type' => $type));
+
+        $context = context_system::instance();
+        self::validate_context($context);
+
+        $rst = $DB->get_records('tool_htmlbootstrapeditor_tpl', array('userid' => $USER->id), 'name');
 
         $result = array();
         foreach ($rst as $obj){
@@ -87,7 +93,10 @@ class tool_htmlbootstrapeditor_external extends external_api {
                         self::save_template_parameters(),
                         array('type' => $type, 'name' => $name, 'htmlstr' => $htmlstr, 'img' => $img));
 
-        $DB->insert_record('htmlbseditor_templates', array('name' => $name, 'type' => $type, 'userid' => $USER->id, 'htmlstr' => $htmlstr, 'img' => $img));
+        $context = context_system::instance();
+        self::validate_context($context);
+        
+        $DB->insert_record('tool_htmlbootstrapeditor_tpl', array('name' => $params['name'], 'type' => $params['type'], 'userid' => $USER->id, 'htmlstr' => $params['htmlstr'], 'img' => $params['img']));
         return array('success' => true);
     }
     
@@ -108,11 +117,15 @@ class tool_htmlbootstrapeditor_external extends external_api {
 
     public static function import_templates($fileContent) {
         global $DB, $USER;
+
         $params = self::validate_parameters(
                         self::import_templates_parameters(),
                         array('fileContent' => $fileContent));
 
-        $fileContent = json_decode($fileContent);
+        $context = context_system::instance();
+        self::validate_context($context);
+
+        $fileContent = json_decode($params['fileContent']);
 
         if(!is_array($fileContent)){
             $fileContent = array($fileContent);
@@ -120,7 +133,7 @@ class tool_htmlbootstrapeditor_external extends external_api {
 
         foreach($fileContent as $item){
             if (!isset($item->htmlStr)) $item->htmlStr = $item->htmlstr; //JSON sometimes voids capit keys
-            $DB->insert_record('htmlbseditor_templates', array('name' => $item->name, 'type' => $item->type, 'userid' => $USER->id, 'htmlstr' => $item->htmlStr, 'img' => $item->img));
+            $DB->insert_record('tool_htmlbootstrapeditor_tpl', array('name' => $item->name, 'type' => $item->type, 'userid' => $USER->id, 'htmlstr' => $item->htmlStr, 'img' => $item->img));
         }
         return array('success' => true);
     }
@@ -142,11 +155,15 @@ class tool_htmlbootstrapeditor_external extends external_api {
 
     public static function delete_template($id) {
         global $DB, $USER;
-        $params = self::validate_parameters(
-                        self::delete_template_parameters(),
-                        array('id' => $id));
 
-        $DB->delete_records('htmlbseditor_templates', array('id' => $id, 'userid' => $USER->id));//Pass userid so user can only delete their own templates
+        $params = self::validate_parameters(self::delete_template_parameters(), [
+            'id' => $id
+        ]);
+
+        $context = context_system::instance();
+        self::validate_context($context);
+
+        $DB->delete_records('tool_htmlbootstrapeditor_tpl', array('id' => $params['id'], 'userid' => $USER->id));//Pass userid so user can only delete their own templates
         return array('success' => true);
     }
 

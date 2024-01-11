@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
   <XMLDB PATH="admin/tool/htmlbootstrapeditor/db" VERSION="2021060700" COMMENT="XMLDB file for Moodle">
     <TABLES>
-      <TABLE NAME="htmlbseditor_templates" COMMENT="This table stores the user templates">
+      <TABLE NAME="tool_htmlbootstrapeditor_tpl" COMMENT="This table stores the user templates">
         <FIELDS>
           <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
           <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" />
