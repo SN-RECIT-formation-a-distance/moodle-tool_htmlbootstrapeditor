@@ -38,6 +38,7 @@ M.recit.htmlbootstrapeditor.IWrapper = {
     getSettings: null,
     uploadFile: null,
     getThemeCssRules: null,
+    getAdditionalHTMLHead: null,
     getThemeUrl: null,
     getContent: null,
     saveContent: null,
@@ -51,6 +52,7 @@ M.recit.htmlbootstrapeditor.IWrapper.getSettings = function(){
     result.showcase_url = M.recit.htmlbootstrapeditor.settings.showcase_url;
     result.iconclass = M.recit.htmlbootstrapeditor.settings.iconclass;
     result.pixabaykey = M.recit.htmlbootstrapeditor.settings.pixabaykey;
+
     return result;
 }
 
@@ -59,7 +61,7 @@ M.recit.htmlbootstrapeditor.IWrapper.getThemeCssRules = function(returnAllRules)
     var styleSheets = window.document.styleSheets;
 
 
-    var cssRulesBuffer = {rules: [], url: []};
+    var cssRulesBuffer = {rules: [], urlList: []};
     var titles = M.recit.htmlbootstrapeditor.settings.stylesheet_to_add
     if (titles){
         titles = titles.split(',')
@@ -76,13 +78,27 @@ M.recit.htmlbootstrapeditor.IWrapper.getThemeCssRules = function(returnAllRules)
                 }
             }
             if (sheet.href){
-                cssRulesBuffer.url.push(sheet.href);
+                cssRulesBuffer.urlList.push(sheet.href);
             }
         }
     }
 
     return cssRulesBuffer;
 }
+
+M.recit.htmlbootstrapeditor.IWrapper.getAdditionalHTMLHead = function(){
+    let result = {
+        css: [], 
+        js: [] 
+    };
+
+    if(M.recit.htmlbootstrapeditor.settings.additionalstylesheet.length > 0){
+        result.css = M.recit.htmlbootstrapeditor.settings.additionalstylesheet.split('\n');
+    }
+
+    return result;
+}
+
 
 M.recit.htmlbootstrapeditor.IWrapper.saveTemplate = function(data){
     return M.recit.htmlbootstrapeditor.queryMoodle('htmlbootstrapeditor_save_template', data);

@@ -54,6 +54,13 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $settings->add($setting);
    
+    $name = 'tool_htmlbootstrapeditor/additionalstylesheet';
+    $title = get_string('additionalstylesheet', 'tool_htmlbootstrapeditor');
+    $description = get_string('additionalstylesheetdesc', 'tool_htmlbootstrapeditor');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $settings->add($setting);
+
     $name = 'tool_htmlbootstrapeditor/pixabaykey';
     $title = get_string('pixabaykey', 'tool_htmlbootstrapeditor');
     $description = get_string('pixabaykeydesc', 'tool_htmlbootstrapeditor');

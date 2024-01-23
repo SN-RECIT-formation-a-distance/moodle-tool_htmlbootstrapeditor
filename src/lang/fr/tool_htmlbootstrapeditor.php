@@ -21,7 +21,9 @@ $string['iconclass'] = 'Icônes à charger dans l\'éditeur';
 $string['iconclassdesc'] = 'Les classes nommées ci-dessus rendent disponibles les catégories d\'icônes pour les utilisateurs. Les classes Fontello et RECITFAD sont utilisées à l\'intérieur du <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Thème RÉCIT v2</a>.';
 $string['stylesheet_to_add'] = 'Titre du CSS à charger dans l\'éditeur.';
 $string['stylesheet_to_adddesc'] = 'Plusieurs titres peuvent être ajoutés en les séparant par une virgule. Si vous possédez le thème RÉCIT, appliquez: theme-recit-custom-css. <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-tool_htmlbootstrapeditor/blob/master/README.md#css-loading" target="_blank">Plus d\'information</a>.';
-
+$string['additionalstylesheet'] = 'Feuilles de style supplémentaires';
+$string['additionalstylesheetdesc'] = 'Les feuilles de style supplémentaires ajoutées ici doivent également être ajoutées dans la propriété <i>additionalhtmlhead</i>.';
+  
 //React
 $string['inputurl'] = 'URL';
 $string['createlink'] = 'Créer lien';

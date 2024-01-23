@@ -40,6 +40,7 @@ function tool_htmlbootstrapeditor_init_settings() {
         'stylesheet_to_add' => get_config('tool_htmlbootstrapeditor', 'stylesheet_to_add'),
         'iconclass' => get_config('tool_htmlbootstrapeditor', 'iconclass'),
         'pixabaykey' => get_config('tool_htmlbootstrapeditor', 'pixabaykey'),
+        'additionalstylesheet' => get_config('tool_htmlbootstrapeditor', 'additionalstylesheet'),
     );
 
     $PAGE->requires->js_init_call('M.recit.htmlbootstrapeditor.init_settings', array($settings));
