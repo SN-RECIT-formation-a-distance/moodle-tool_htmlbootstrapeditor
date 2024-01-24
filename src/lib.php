@@ -281,7 +281,7 @@ function tool_htmlbootstrapeditor_strings_for_js() {
                                             'verticaltablet',
                                             'horizontaltablet',
                                             'hdscreen',
-                                            'fhdscreen', 'dimension', 'fullheight'
+                                            'fhdscreen', 'dimension', 'fullheight', 'appearance'
                                         ),
                                     'tool_htmlbootstrapeditor');
 }
