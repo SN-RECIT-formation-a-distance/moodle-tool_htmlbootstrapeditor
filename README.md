@@ -8,7 +8,7 @@ The HTML Bootstrap editor allows you to create a much more attractive and respon
 * FontAwesome
 
 # Non-standard post-installation steps
-After installing this plugin, it is necessary to place it in the Atto bar.
+After installing this plugin, it is necessary to install atto_htmlbootstrapeditor (https://moodle.org/plugins/atto_htmlbootstrapeditor) in order to add the button in the Atto editor.
 
 ## Showcase
 https://github.com/SN-RECIT-formation-a-distance/html-bootstrap-editor-showcase
