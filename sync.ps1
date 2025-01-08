@@ -1,5 +1,6 @@
 $from = "moodle-tool_htmlbootstrapeditor/src/*"
 $to = "shared/recitfad/admin/tool/htmlbootstrapeditor"
+$source = "./src";
 
 try {
     . ("..\sync\watcher.ps1")

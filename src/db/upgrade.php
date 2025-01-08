@@ -34,5 +34,21 @@ function xmldb_tool_htmlbootstrapeditor_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, $newversion, 'tool', 'htmlbootstrapeditor');
     }
 
+    $newversion = 2024072500;
+    if ($oldversion < $newversion) {
+        $iconclass = get_config('tool_htmlbootstrapeditor', 'iconclass');
+
+        if($iconclass == \tool_htmlbootstrapeditor\admin_setting_configtext_iconclass::DEPRACATED_DEFAULT_VALUE){
+            $iconclass = \tool_htmlbootstrapeditor\admin_setting_configtext_iconclass::DEFAULT_VALUE;
+        }
+        else{
+            $iconclass = str_replace(",", "\n", $iconclass);
+        }
+        
+        set_config('iconclass', $iconclass, 'tool_htmlbootstrapeditor');
+
+        upgrade_plugin_savepoint(true, $newversion, 'tool', 'htmlbootstrapeditor');
+    }
+
     return true;
 }

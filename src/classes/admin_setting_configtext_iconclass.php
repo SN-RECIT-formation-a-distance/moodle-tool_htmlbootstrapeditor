@@ -26,13 +26,20 @@ namespace tool_htmlbootstrapeditor;
 defined('MOODLE_INTERNAL') || die();
 
 
-class admin_setting_configtext_iconclass extends \admin_setting_configtext {
-    public function validate($data) {
-        if (strlen($data) == 0) return true;
-        $data = explode(',', $data);
+class admin_setting_configtext_iconclass extends \admin_setting_configtextarea {
+    public const DEPRACATED_DEFAULT_VALUE = "Fontawesome 4.7=.fa-,Fontawesome 5=.fas-,Fontelleo=.icon-,RÉCITFAD=.recitfad-";
+    public const DEFAULT_VALUE = "fontawesome4\nfontawesome6\nfontello\nrecitfad";
+
+    public function validate($data) {      
+        if (strlen($data) == 0){
+            return true;
+        } 
+
+        $data = explode("\n", $data);
         foreach($data as $d){
-            $c = explode('=', $d);
-            if (!isset($c[1])) return false;
+            if (strlen($d) == 0){
+                return false;
+            }
         }
         return true;
     }
