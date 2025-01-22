@@ -22,7 +22,7 @@ $string['component_url'] = 'Component fetch URL';
 $string['component_urldesc'] = 'Component fetch php URL';
 $string['generalsettings'] = 'General';
 $string['iconclass'] = 'Icons to be loaded';
-$string['iconclassdesc'] = 'CSS classes written above will load icons in icon selector. Fontello and RECITFAD classes are used inside the <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Theme RECIT v2</a>.';
+$string['iconclassdesc'] = 'The above library identifiers make the icon categories available to users.<br/>The available libraries are: fontawesome4, fontawesome6, fontello and recitfad.<br/>Fontello and RECITFAD classes are used inside the <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Theme RECIT v2</a>.';
 $string['stylesheet_to_add'] = 'Title of style sheets to be loaded by the editor.';
 $string['stylesheet_to_adddesc'] = 'Specify the title of style sheets to be loaded. Multiple titles can be added by using a comma. You can find more detailed instructions <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-tool_htmlbootstrapeditor/blob/master/README.md#css-loading" target="_blank">here</a>.';
 $string['additionalstylesheet'] = 'Additional Style Sheets';

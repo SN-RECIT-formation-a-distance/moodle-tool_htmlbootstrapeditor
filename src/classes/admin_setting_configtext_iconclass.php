@@ -27,8 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 
 class admin_setting_configtext_iconclass extends \admin_setting_configtextarea {
-    public const DEPRACATED_DEFAULT_VALUE = "Fontawesome 4.7=.fa-,Fontawesome 5=.fas-,Fontelleo=.icon-,RÉCITFAD=.recitfad-";
-    public const DEFAULT_VALUE = "fontawesome4\nfontawesome6\nfontello\nrecitfad";
+    public const DEFAULT_VALUE = "fontawesome6\nfontello\nrecitfad\nfontawesome4";
 
     public function validate($data) {      
         if (strlen($data) == 0){
