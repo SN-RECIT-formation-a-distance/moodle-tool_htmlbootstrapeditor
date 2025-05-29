@@ -263,3 +263,13 @@ $string['youtubeparamrel'] = "Values: 0 or 1. The default value is 1. This param
 $string['dimension'] = "Dimension";
 $string['fullheight'] = "Full Height";
 $string['appearance'] = "Appearance";
+$string['decorative'] = "Mark as decorative";
+
+$string['imgalterror'] = "No description";
+$string['iframeerror'] = "No title";
+$string['h1error'] = "H1 not allowed";
+$string['h2error'] = "H2 not allowed";
+$string['h4error'] = "H4 without H3";
+$string['h5error'] = "H5 without H4";
+$string['h6error'] = "H6 without H5";
+$string['accessibility'] = "Accessibility";

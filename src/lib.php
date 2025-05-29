@@ -281,7 +281,16 @@ function tool_htmlbootstrapeditor_strings_for_js() {
                                             'verticaltablet',
                                             'horizontaltablet',
                                             'hdscreen',
-                                            'fhdscreen', 'dimension', 'fullheight', 'appearance'
+                                            'fhdscreen', 'dimension', 'fullheight', 'appearance',
+                                            'accessibility',
+                                            'imgalterror',
+                                            'iframeerror',
+                                            'h1error',
+                                            'h2error',
+                                            'h4error',
+                                            'h5error',
+                                            'h6error',
+                                            'decorative',
                                         ),
                                     'tool_htmlbootstrapeditor');
 }
