@@ -18,7 +18,7 @@ $string['showcase_url'] = 'Vitrine URL';
 $string['showcase_urldesc'] = 'URL du serveur de la vitrine';
 $string['generalsettings'] = 'General';
 $string['iconclass'] = 'Icônes à charger dans l\'éditeur';
-$string['iconclassdesc'] = 'Les identificateurs de bibliotèques nommées ci-dessus rendent disponibles les catégories d\'icônes pour les utilisateurs.<br/>Les bibliotèques disponibles sont: fontawesome4, fontawesome6, fontello et recitfad.<br/>Les classes Fontello et RECITFAD sont utilisées à l\'intérieur du <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Thème RÉCIT v2</a>.';
+$string['iconclassdesc'] = 'Les identificateurs de bibliothèques nommées ci-dessus rendent disponibles les catégories d\'icônes pour les utilisateurs.<br/>Les bibliothèques disponibles sont: fontawesome4, fontawesome6, fontello et recitfad.<br/>Les classes Fontello et RECITFAD sont utilisées à l\'intérieur du <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-theme_recit/releases" target="_blank">Thème RÉCIT v2</a>.';
 $string['stylesheet_to_add'] = 'Titre du CSS à charger dans l\'éditeur.';
 $string['stylesheet_to_adddesc'] = 'Plusieurs titres peuvent être ajoutés en les séparant par une virgule. Si vous possédez le thème RÉCIT, appliquez: theme-recit-custom-css. <a href="https://github.com/SN-RECIT-formation-a-distance/moodle-tool_htmlbootstrapeditor/blob/master/README.md#css-loading" target="_blank">Plus d\'information</a>.';
 $string['additionalstylesheet'] = 'Feuilles de style supplémentaires';
