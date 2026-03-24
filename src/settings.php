@@ -40,6 +40,12 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $settings->add($setting);
 
+    $name = 'tool_htmlbootstrapeditor/enablemigrationpopup';
+    $title = get_string('enablemigrationpopup', 'tool_htmlbootstrapeditor');
+    $description = '';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $settings->add($setting);
+
     $name = 'tool_htmlbootstrapeditor/showcase_url';
     $title = get_string('showcase_url', 'tool_htmlbootstrapeditor');
     $description = get_string('showcase_urldesc', 'tool_htmlbootstrapeditor');

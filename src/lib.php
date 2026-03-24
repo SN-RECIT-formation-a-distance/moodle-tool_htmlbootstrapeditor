@@ -37,6 +37,7 @@ function tool_htmlbootstrapeditor_init_settings() {
     $settings = array(
         'currentthemesubrev' => theme_get_sub_revision_for_theme($CFG->theme),
         'showcase_url' => get_config('tool_htmlbootstrapeditor', 'enableshowcase') == 1 ? get_config('tool_htmlbootstrapeditor', 'showcase_url') : '',
+        'enable_migration_popup' => get_config('tool_htmlbootstrapeditor', 'enablemigrationpopup'),
         'stylesheet_to_add' => get_config('tool_htmlbootstrapeditor', 'stylesheet_to_add'),
         'iconclass' => explode("\n", str_replace("\r", "", get_config('tool_htmlbootstrapeditor', 'iconclass'))),
         'pixabaykey' => get_config('tool_htmlbootstrapeditor', 'pixabaykey'),
@@ -291,6 +292,8 @@ function tool_htmlbootstrapeditor_strings_for_js() {
                                             'h5error',
                                             'h6error',
                                             'decorative',
+                                            'migratelegacy',
+                                            'migrate',
                                         ),
                                     'tool_htmlbootstrapeditor');
 }

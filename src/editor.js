@@ -52,6 +52,7 @@ M.recit.htmlbootstrapeditor.IWrapper.getSettings = function(){
     result.showcase_url = M.recit.htmlbootstrapeditor.settings.showcase_url;
     result.iconclass = M.recit.htmlbootstrapeditor.settings.iconclass;
     result.pixabaykey = M.recit.htmlbootstrapeditor.settings.pixabaykey;
+    result.enable_migration_popup = M.recit.htmlbootstrapeditor.settings.enable_migration_popup;
 
     return result;
 }
