@@ -272,6 +272,7 @@ $string['h2error'] = "H2 not allowed";
 $string['h4error'] = "H4 without H3";
 $string['h5error'] = "H5 without H4";
 $string['h6error'] = "H6 without H5";
+$string['colorcontrasterror'] = "Insufficient color contrast";
 $string['accessibility'] = "Accessibility";
 $string['migratelegacy'] = "Legacy Bootstrap 4 classes have been found. Would you like to upgrade them to Bootstrap 5?";
 $string['migrate'] = "Migrate to BS5";
