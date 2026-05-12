@@ -32,6 +32,5 @@ This will tell the editor to load the specified CSS file (in this case, "example
 The files styles.css and content.js are a copy from the library html-bootstrap-editor.
 
 ## Library html-bootstrap editor compilation 
-1. Committing changes to the lib git repository (increase version number).
-2. Run in the react folder of plugin "npm i git+https://github.com/SN-RECIT-formation-a-distance/html-bootstrap-editor.git" to update the lib at plugin folder.
-3. Run in the react folder of plugin "npm run build" to compile the plugin with the lib.
+1. Clone the project https://github.com/SN-RECIT-formation-a-distance/html-bootstrap-editor
+2. Run /src/create-link-editor.bat
