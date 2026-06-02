@@ -38,7 +38,7 @@ $functions = array(
                 'methodname'  => 'save_template',
                 'classpath'   => '/admin/tool/htmlbootstrapeditor/externallib.php',
                 'description' => 'Saves template',
-                'type'        => 'read',
+                'type'        => 'write',
                 'ajax'        => true,
             ),
             'htmlbootstrapeditor_import_templates' => array(
@@ -46,7 +46,7 @@ $functions = array(
                 'methodname'  => 'import_templates',
                 'classpath'   => '/admin/tool/htmlbootstrapeditor/externallib.php',
                 'description' => 'Import template',
-                'type'        => 'read',
+                'type'        => 'write',
                 'ajax'        => true,
             ),
             'htmlbootstrapeditor_delete_template' => array(
@@ -54,7 +54,7 @@ $functions = array(
                 'methodname'  => 'delete_template',
                 'classpath'   => '/admin/tool/htmlbootstrapeditor/externallib.php',
                 'description' => 'Delete template',
-                'type'        => 'read',
+                'type'        => 'write',
                 'ajax'        => true,
             ),
 

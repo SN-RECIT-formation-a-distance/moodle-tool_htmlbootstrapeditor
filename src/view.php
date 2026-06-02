@@ -11,7 +11,7 @@ require_login();
     </head>
     <body>
         <div id="editor"></div>
-        <script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/admin/tool/htmlbootstrapeditor/editor/htmlbootstrapeditor.js"></script>
+        <script type="text/javascript" src="<?php echo s($CFG->wwwroot); ?>/admin/tool/htmlbootstrapeditor/editor/htmlbootstrapeditor.js"></script>
         <script>
             HTMLBootstrapEditor.render("#editor", {wrapper: window.IWrapper});
         </script>

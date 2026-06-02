@@ -1,12 +1,14 @@
 <?php
 $string['pluginname'] = 'Éditeur HTML Bootstrap';
-$string['privacymetadata'] = 'Le plugin tool_htmlbootstrapeditor stocke des gabarits HTML relié à l\'utilisateur';
-$string['privacy:metadata:tool_htmlbootstrapeditor_templates'] = 'Stocke les gabarits';
+$string['privacymetadata'] = 'Le plugin tool_htmlbootstrapeditor stocke des gabarits HTML créés par les utilisateurs. Chaque gabarit est associé à l\'utilisateur qui l\'a créé et peut contenir des renseignements personnels intégrés dans le contenu HTML.';
+$string['privacy:metadata:tool_htmlbootstrapeditor_templates'] = 'Stocke les gabarits HTML créés par les utilisateurs';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:name'] = 'Nom du gabarit';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:type'] = 'Type du gabarit';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:userid'] = 'Propriétaire du gabarit';
-$string['privacy:metadata:tool_htmlbootstrapeditor_templates:htmlstr'] = 'HTML du gabarit';
+$string['privacy:metadata:tool_htmlbootstrapeditor_templates:htmlstr'] = 'Contenu HTML du gabarit (peut contenir des renseignements personnels saisis par l\'utilisateur)';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:img'] = 'Aperçu du gabarit';
+$string['privacy:request:delete'] = 'Tous les gabarits de l\'Éditeur HTML Bootstrap créés par cet utilisateur ont été supprimés.';
+$string['privacy:request:export'] = 'Gabarits de l\'Éditeur HTML Bootstrap créés par cet utilisateur. Note : le contenu HTML des gabarits peut contenir des renseignements personnels saisis directement par l\'utilisateur.';
 
 $string['htmleditor'] = 'Éditeur HTML Bootstrap';
 $string['fetch_components'] = 'Recherche de composants';

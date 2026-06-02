@@ -53,8 +53,8 @@ class tool_htmlbootstrapeditor_external extends external_api {
     public static function get_template_list($type = null) {
         global $DB, $USER;
 
-        //$params = self::validate_parameters(
-        //    self::save_template_parameters(), array('type' => $type));
+        $params = self::validate_parameters(
+            self::get_template_list_parameters(), array('type' => $type));
 
         $context = context_system::instance();
         self::validate_context($context);
@@ -127,13 +127,38 @@ class tool_htmlbootstrapeditor_external extends external_api {
 
         $fileContent = json_decode($params['fileContent']);
 
-        if(!is_array($fileContent)){
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new invalid_parameter_exception('Invalid JSON: ' . json_last_error_msg());
+        }
+
+        if (!is_array($fileContent)) {
+            if (!is_object($fileContent)) {
+                throw new invalid_parameter_exception('JSON must be an object or array of objects');
+            }
             $fileContent = array($fileContent);
         }
 
-        foreach($fileContent as $item){
-            if (!isset($item->htmlStr)) $item->htmlStr = $item->htmlstr; //JSON sometimes voids capit keys
-            $DB->insert_record('tool_htmlbootstrapeditor_tpl', array('name' => $item->name, 'type' => $item->type, 'userid' => $USER->id, 'htmlstr' => $item->htmlStr, 'img' => $item->img));
+        foreach ($fileContent as $item) {
+            if (!is_object($item)) {
+                throw new invalid_parameter_exception('Each template entry must be a JSON object');
+            }
+
+            // Normalise case: JSON parsers on some clients lowercase all keys.
+            if (!isset($item->htmlStr) && isset($item->htmlstr)) {
+                $item->htmlStr = $item->htmlstr;
+            }
+
+            if (!isset($item->name) || !isset($item->type) || !isset($item->htmlStr) || !isset($item->img)) {
+                throw new invalid_parameter_exception('Template entry is missing required fields (name, type, htmlStr, img)');
+            }
+
+            $DB->insert_record('tool_htmlbootstrapeditor_tpl', array(
+                'name'    => clean_param($item->name, PARAM_TEXT),
+                'type'    => clean_param($item->type, PARAM_TEXT),
+                'userid'  => $USER->id,
+                'htmlstr' => $item->htmlStr,
+                'img'     => $item->img,
+            ));
         }
         return array('success' => true);
     }

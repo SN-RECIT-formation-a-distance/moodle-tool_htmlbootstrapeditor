@@ -1,12 +1,14 @@
 <?php
 $string['pluginname'] = 'HTML Bootstrap Editor';
-$string['privacymetadata'] = 'The tool_htmlbootstrapeditor plugin stores user templates with userid.';
-$string['privacy:metadata:tool_htmlbootstrapeditor_templates'] = 'Stores templates';
+$string['privacymetadata'] = 'The tool_htmlbootstrapeditor plugin stores HTML templates created by users. Each template is linked to the user who created it and may contain personal information embedded in the HTML content.';
+$string['privacy:metadata:tool_htmlbootstrapeditor_templates'] = 'Stores user-created HTML templates';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:name'] = 'Template name';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:type'] = 'Template type';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:userid'] = 'The user ID the template belongs to';
-$string['privacy:metadata:tool_htmlbootstrapeditor_templates:htmlstr'] = 'Template HTML';
+$string['privacy:metadata:tool_htmlbootstrapeditor_templates:htmlstr'] = 'Template HTML content (may contain personal information entered by the user)';
 $string['privacy:metadata:tool_htmlbootstrapeditor_templates:img'] = 'Image preview of template';
+$string['privacy:request:delete'] = 'All HTML Bootstrap Editor templates created by this user have been deleted.';
+$string['privacy:request:export'] = 'HTML Bootstrap Editor templates created by this user. Note: the HTML content of templates may contain personal information entered directly by the user.';
 
 $string['htmleditor'] = 'HTML Bootstrap Editor';
 $string['fetch_components'] = 'Fetch components';
