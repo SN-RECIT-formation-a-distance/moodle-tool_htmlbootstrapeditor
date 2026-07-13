@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 function tool_htmlbootstrapeditor_inject_js() {
     global $PAGE;
 
-    $PAGE->requires->js('/admin/tool/htmlbootstrapeditor/content.js');
+    $PAGE->requires->js_call_amd('tool_htmlbootstrapeditor/content', 'init');
 }
 
 function tool_htmlbootstrapeditor_init_settings() {

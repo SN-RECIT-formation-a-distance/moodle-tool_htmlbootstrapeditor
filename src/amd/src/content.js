@@ -14,19 +14,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * HTML Bootstrap Editor
+ * Handles the interactive bits of previously-authored HTML Bootstrap Editor content: video
+ * popups, image lightboxes and flip cards. Loaded on every page (see hook_callbacks.php) so this
+ * keeps working wherever such content is displayed, independent of whether an editor instance is
+ * present on the page.
  *
- * @package    tool_htmlbootstrapeditor
+ * @module     tool_htmlbootstrapeditor/content
  * @copyright  2019 RECIT
  * @license    {@link http://www.gnu.org/licenses/gpl-3.0.html} GNU GPL v3 or later
  */
 
-M = M || {};
-M.recit = M.recit || {};
-M.recit.htmlbootstrapeditor = M.recit.htmlbootstrapeditor || {};
+let initialized = false;
 
-M.recit.htmlbootstrapeditor.Popup = class {
-    constructor(content) {        
+class Popup {
+    constructor(content) {
         let modal = document.createElement('div');
         modal.classList.add('modal', 'fade', 'htmlbootstrapeditor_popup');
         modal.setAttribute('style', 'overflow-y: hidden;');
@@ -49,12 +50,12 @@ M.recit.htmlbootstrapeditor.Popup = class {
         btn.setAttribute('data-dismiss', 'modal');
         btn.onclick = this.destroy.bind(this);
         header.appendChild(btn);
-        
+
         let body = document.createElement('div');
         body.classList.add('modal-body');
         inner.appendChild(body);
         body.appendChild(content);
-        
+
         document.body.appendChild(modal);
         this.popup = modal;
 
@@ -66,48 +67,55 @@ M.recit.htmlbootstrapeditor.Popup = class {
         document.body.appendChild(this.backdrop);
     }
 
-    destroy(){
+    destroy() {
         this.popup.classList.remove('show');
         this.backdrop.classList.remove('show');
         this.popup.remove();
         this.backdrop.remove();
     }
-
-    update(){
-    
-    }
 }
 
-document.body.addEventListener('click',function(e){
-    if(e.target && e.target.classList.contains('htmlbootstrapeditor_videobtn')){
-        let url = e.target.getAttribute('data-videourl');
-        if (url){
-            let iframe = document.createElement('iframe');
+const handleClick = (e) => {
+    if (e.target && e.target.classList.contains('htmlbootstrapeditor_videobtn')) {
+        const url = e.target.getAttribute('data-videourl');
+        if (url) {
+            const iframe = document.createElement('iframe');
             iframe.src = url;
-            new M.recit.htmlbootstrapeditor.Popup(iframe);
+            new Popup(iframe);
         }
         e.preventDefault();
-    }else if(e.target && e.target.classList.contains('htmlbootstrapeditor_img-popup')){
-        let url = e.target.src;
-        if (url){
-            let img = document.createElement('img');
+    } else if (e.target && e.target.classList.contains('htmlbootstrapeditor_img-popup')) {
+        const url = e.target.src;
+        if (url) {
+            const img = document.createElement('img');
             img.src = url;
-            new M.recit.htmlbootstrapeditor.Popup(img);
+            new Popup(img);
         }
         e.preventDefault();
-    }else if(e.target && e.target.matches('.htmlbootstrapeditor_flipcard2 *')){ //Check if user clicked on a flipcard or its children
-        let el = e.target;
-        while (el = el.parentElement){
-            if (el.classList.contains('htmlbootstrapeditor_flipcard2')){
-                break;
-            }
+    } else if (e.target && e.target.matches('.htmlbootstrapeditor_flipcard2 *')) {
+        // Check if user clicked on a flipcard or its children.
+        const el = e.target.closest('.htmlbootstrapeditor_flipcard2');
+        if (!el) {
+            return;
         }
-        if (!el) return;
-        if(el.classList.contains("hover2")){
+        if (el.classList.contains('hover2')) {
             el.classList.remove('hover2');
-        }else{
+        } else {
             el.classList.add('hover2');
         }
         e.preventDefault();
     }
-});
+};
+
+/**
+ * Attach the delegated click handler. Safe to call more than once per page (e.g. once from the
+ * page-wide hook and again per editor instance): the listener is only ever registered once.
+ */
+export const init = () => {
+    if (initialized) {
+        return;
+    }
+    initialized = true;
+
+    document.body.addEventListener('click', handleClick);
+};
