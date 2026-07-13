@@ -28,7 +28,6 @@ function tool_htmlbootstrapeditor_inject_js() {
     global $PAGE;
 
     $PAGE->requires->js('/admin/tool/htmlbootstrapeditor/content.js');
-    $PAGE->requires->js('/admin/tool/htmlbootstrapeditor/editor.js');
 }
 
 function tool_htmlbootstrapeditor_init_settings() {
@@ -44,7 +43,7 @@ function tool_htmlbootstrapeditor_init_settings() {
         'additionalstylesheet' => get_config('tool_htmlbootstrapeditor', 'additionalstylesheet'),
     );
 
-    $PAGE->requires->js_init_call('M.recit.htmlbootstrapeditor.init_settings', array($settings));
+    $PAGE->requires->js_call_amd('tool_htmlbootstrapeditor/editor', 'initSettings', array($settings));
 }
 
 /**

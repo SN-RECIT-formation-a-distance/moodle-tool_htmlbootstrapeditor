@@ -1,5 +1,5 @@
 $from = "moodle-tool_htmlbootstrapeditor/src/*"
-$to = "shared/recitfad3/admin/tool/htmlbootstrapeditor"
+$to = "shared/recitfad4/public/admin/tool/htmlbootstrapeditor"
 $source = "./src";
 
 try {
